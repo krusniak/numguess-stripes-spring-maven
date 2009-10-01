@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:s="http://stripes.sourceforge.net/stripes.tld"
+	version="2.0">
+    <jsp:output doctype-root-element="html"
+        doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"
+        doctype-system="http://www.w3c.org/TR/xhtml1/DTD/xhtml11-strict.dtd"/>
+	<jsp:directive.page contentType="text/html" />
+	<html>
+	<head>
+	<title><fmt:message key="start.title" /></title>
+	</head>
+	<body>
+	<h1><fmt:message key="start.heading" /></h1>
+	<s:form beanclass="numguess.stripes.NumguessActionBean" focus="">
+		<p><fmt:message key="start.message">
+			<fmt:param value="${actionBean.min}" />
+			<fmt:param value="${actionBean.max}" />
+		</fmt:message></p>
+		<s:errors/>
+		<fmt:message key="prompt.guess" />
+		<jsp:text> </jsp:text>
+		<s:text name="guess" size="8" maxlength="8" />
+		<jsp:text> </jsp:text>
+		<s:submit name="submitGuess">
+			<fmt:message key="button.submit" />
+		</s:submit>
+	</s:form>
+	</body>
+	</html>
+</jsp:root>

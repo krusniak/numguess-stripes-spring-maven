@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+    xmlns:decorator="http://www.opensymphony.com/sitemesh/decorator"
+    version="2.0">
+
+  <div class="panelBody">
+    <decorator:body />
+  </div>
+
+</jsp:root>

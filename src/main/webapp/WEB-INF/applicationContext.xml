@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-2.5.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+
+	<!-- This bean holds the shared data at the application scope -->
+	<bean id="sharedData" class="numguess.model.DefaultSharedData" />
+
+	<!-- This bean holds the user-specific data at the session scope -->
+	<bean id="gameModel" class="numguess.model.DefaultGameModel" scope="session">
+		<property name="sharedData" ref="sharedData" />
+		<property name="min" value="1"/>
+		<property name="max" value="100"/>
+		<aop:scoped-proxy /> <!-- so this bean can serve as a dependency -->
+	</bean>
+
+</beans>

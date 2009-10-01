@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<decorators defaultdir="/WEB-INF/decorators">
+
+  <decorator name="top" page="top.jspx">
+    <pattern>/*</pattern>
+  </decorator>
+
+  <decorator name="layout" page="layout.jspx"/>
+
+  <decorator name="panel" page="panel.jspx"/>
+
+  <decorator name="printable" page="print.jspx"/>
+
+</decorators>

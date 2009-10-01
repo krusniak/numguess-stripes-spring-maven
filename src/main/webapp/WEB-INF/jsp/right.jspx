@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:s="http://stripes.sourceforge.net/stripes.tld"
+	version="2.0">
+    <jsp:output doctype-root-element="html"
+        doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"
+        doctype-system="http://www.w3c.org/TR/xhtml1/DTD/xhtml11-strict.dtd"/>
+	<jsp:directive.page contentType="text/html" />
+	<html>
+	<head>
+	<title><fmt:message key="right.title" /></title>
+	</head>
+	<body>
+	<h1><fmt:message key="right.heading" /></h1>
+	<s:form beanclass="numguess.stripes.NumguessActionBean" focus="">
+		<p><fmt:message key="right.message">
+			<fmt:param value="${actionBean.result.numGuesses}" />
+		</fmt:message> <jsp:text>
+		</jsp:text> <c:choose>
+			<c:when test="${actionBean.result.newBestScore}">
+				<fmt:message key="right.newbestscore" />
+			</c:when>
+			<c:otherwise>
+				<fmt:message key="right.bestscore">
+					<fmt:param value="${actionBean.result.bestScore}" />
+				</fmt:message>
+			</c:otherwise>
+		</c:choose></p>
+		<s:link href="/Numguess.action">
+			<fmt:message key="right.link.restart" />
+		</s:link>
+	</s:form>
+	</body>
+	</html>
+</jsp:root>

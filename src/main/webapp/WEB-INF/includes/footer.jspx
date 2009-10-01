@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+
+  <jsp:directive.page contentType="text/html" />
+
+  <div class="footer">
+    Support: <a href="http://www.cs.luc.edu/laufer">Konstantin L&#228;ufer</a>
+  </div>
+
+</jsp:root>

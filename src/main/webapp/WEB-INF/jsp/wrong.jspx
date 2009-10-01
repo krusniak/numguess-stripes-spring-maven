@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:s="http://stripes.sourceforge.net/stripes.tld"
+	version="2.0">
+    <jsp:output doctype-root-element="html"
+        doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"
+        doctype-system="http://www.w3c.org/TR/xhtml1/DTD/xhtml11-strict.dtd"/>
+	<jsp:directive.page contentType="text/html" />
+	<html>
+	<head>
+	<title><fmt:message key="wrong.title" /></title>
+	</head>
+	<body>
+	<h1><fmt:message key="wrong.heading" /></h1>
+	<p><fmt:message key="wrong.message" /></p>
+	<s:form beanclass="numguess.stripes.NumguessActionBean" focus="">
+		<c:if test="${!s:hasErrors(actionBean, 'guess')}">
+		<p><c:choose>
+			<c:when test="${actionBean.result.comparison lt 0}">
+				<fmt:message key="wrong.higher" />
+			</c:when>
+			<c:when test="${actionBean.result.comparison gt 0}">
+				<fmt:message key="wrong.lower" />
+			</c:when>
+		</c:choose>
+		<jsp:text> </jsp:text>
+		<fmt:message key="wrong.numguesses">
+			<fmt:param value="${actionBean.result.numGuesses}" />
+		</fmt:message></p>
+		</c:if>
+		<s:errors/>
+		<fmt:message key="prompt.guess" />
+		<jsp:text> </jsp:text>
+		<s:text name="guess" size="8" maxlength="8" />
+		<jsp:text> </jsp:text>
+		<s:submit name="submitGuess">
+			<fmt:message key="button.submit" />
+		</s:submit>
+ 	</s:form>
+	</body>
+	</html>
+</jsp:root>

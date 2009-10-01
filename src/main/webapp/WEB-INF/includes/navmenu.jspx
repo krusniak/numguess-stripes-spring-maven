@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+	xmlns:s="http://stripes.sourceforge.net/stripes.tld"
+    version="2.0">
+
+	<jsp:directive.page contentType="text/html" />
+
+    <div class="navmenuitems">
+	  <s:link href="/Numguess.action">
+		<fmt:message key="right.link.restart" />
+  	  </s:link>
+    </div>
+
+</jsp:root>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+
+  <jsp:directive.page contentType="text/html" />
+
+  <div class="header">
+    <a href="http://www.cs.luc.edu/laufer/teaching/442/">Loyola CS 388/442</a>
+    Numguess using <a href="http://www.stripesframework.org/">Stripes</a>,
+    <a href="http://java.sun.com/products/jsp/jstl/">JSTL</a>,
+    <a href="http://springframework.org/">Spring</a>,
+    and <a href="http://opensymphony.com/sitemesh/">SiteMesh</a>
+  </div>
+
+</jsp:root>
